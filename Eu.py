@@ -6,6 +6,7 @@ def CountEuler(C0, dC, delta, min, max):
     IntSteps = [min]
     for h in np.arange(min, max, delta):
         C0 = C0 + dC(C0) * delta
+
         C.append(C0)
         IntSteps.append(h)
     return C, IntSteps
