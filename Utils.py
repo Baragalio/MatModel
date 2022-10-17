@@ -1,15 +1,25 @@
 import math
-import Data
+from Data.Data import p, R, T, V, D
+
 
 def k(A, E):
-    return A * math.e**(-E / (Data.R * Data.T))
+    return A * math.e ** (-CalToDj(E) / (R * T))
+
 
 # Концентрация из % в моль/м3
-def Cu(C, u):
-    return (C * Data.p) / (100 * u)
+def CtoM(C, u):
+    return (C * p) / (100 * u)
+def MtoC(M, u):
+    return M * 100 * u / p
+
 
 def S():
-    return math.pi * Data.D ** 2 / 4
+    return math.pi * D ** 2 / 4
+
 
 def U():
-    return Data.V / (math.pi * S())
+    return V / (math.pi * S())
+
+
+def CalToDj(E):
+    return E / 0.23900573613767
